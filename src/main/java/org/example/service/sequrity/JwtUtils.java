@@ -28,12 +28,12 @@ public class JwtUtils {
     private String jwtRefreshCookie;
 
     public ResponseCookie generateJwtCookie(UserDetailsImpl userPrincipal) {
-        String jwt = generateTokenFromUsername(userPrincipal.getUsername(), userPrincipal.getId());
+        String jwt = generateTokenFromUsername(userPrincipal.getEmail());
         return generateCookie(jwtCookie, jwt, "/api/v1");
     }
 
     public ResponseCookie generateJwtCookie(User user) {
-        String jwt = generateTokenFromUsername(user.getUsername(), user.getId());
+        String jwt = generateTokenFromUsername(user.getUsername());
         return generateCookie(jwtCookie, jwt, "/api/v1");
     }
 
@@ -85,9 +85,9 @@ public class JwtUtils {
         return false;
     }
 
-    public String generateTokenFromUsername(String name, Long id) {
+    public String generateTokenFromUsername(String email) {
         return Jwts.builder()
-                .setSubject(name)
+                .setSubject(email)
                 .setIssuedAt(new Date())
                 .setExpiration(new Date((new Date()).getTime() + jwtExpirationMs))
                 .signWith(key(), SignatureAlgorithm.HS256)
