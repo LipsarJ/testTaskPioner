@@ -1,12 +1,12 @@
 package org.example.service.impl;
 
 import lombok.RequiredArgsConstructor;
-import org.example.dao.dto.request.TransferDTO;
-import org.example.dao.entity.Account;
-import org.example.dao.repository.AccountRepository;
+import org.example.data.dto.request.TransferDTO;
+import org.example.data.entity.Account;
+import org.example.data.repository.AccountRepository;
 import org.example.service.AccountService;
 import org.example.service.exception.extend.user.UserNotFoundException;
-import org.example.service.sequrity.service.impl.UserContext;
+import org.example.sequrity.service.impl.UserContext;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -24,9 +24,9 @@ public class AccountServiceImpl implements AccountService {
     @Scheduled(fixedRate = 30000) // каждые 30 секунд
     @Transactional
     public void increaseBalances() {
-        List<Account> accounts = accountRepo.findAllForUpdate(); // with PESSIMISTIC_WRITE lock
+        List<Account> accounts = accountRepo.findAllForUpdate();
 
-        for (Account account : accounts) {
+        accounts.forEach(account -> {
             BigDecimal maxBalance = account.getInitialBalance().multiply(BigDecimal.valueOf(2.07));
             BigDecimal increased = account.getBalance().multiply(BigDecimal.valueOf(1.1));
 
@@ -35,7 +35,7 @@ public class AccountServiceImpl implements AccountService {
             }
 
             account.setBalance(increased);
-        }
+        });
 
         accountRepo.saveAll(accounts);
     }

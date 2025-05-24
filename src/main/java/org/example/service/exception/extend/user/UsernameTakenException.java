@@ -1,7 +1,7 @@
 package org.example.service.exception.extend.user;
 
 
-import org.example.api.responses.Errors;
+import org.example.controller.response.Errors;
 import org.example.service.exception.BadDataException;
 
 public class UsernameTakenException extends BadDataException {
