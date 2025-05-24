@@ -1,11 +1,11 @@
 package org.example.service;
 
-import org.example.dao.dto.request.TransferDTO;
-import org.example.dao.dto.response.ResponseUserDTO;
-import org.example.dao.entity.Account;
-import org.example.dao.repository.AccountRepository;
+import org.example.data.dto.request.TransferDTO;
+import org.example.data.dto.response.ResponseUserDTO;
+import org.example.data.entity.Account;
+import org.example.data.repository.AccountRepository;
 import org.example.service.impl.AccountServiceImpl;
-import org.example.service.sequrity.service.impl.UserContext;
+import org.example.sequrity.service.impl.UserContext;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

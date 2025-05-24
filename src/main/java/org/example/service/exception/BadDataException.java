@@ -1,7 +1,7 @@
 package org.example.service.exception;
 
 
-import org.example.api.responses.Errors;
+import org.example.data.dto.Errors;
 
 public class BadDataException extends RuntimeException {
     private final Errors errorCode;

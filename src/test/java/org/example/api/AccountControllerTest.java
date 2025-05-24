@@ -1,9 +1,9 @@
 package org.example.api;
 
-import org.example.dao.entity.Account;
-import org.example.dao.entity.User;
-import org.example.dao.repository.AccountRepository;
-import org.example.dao.repository.UserRepository;
+import org.example.data.entity.Account;
+import org.example.data.entity.User;
+import org.example.data.repository.AccountRepository;
+import org.example.data.repository.UserRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

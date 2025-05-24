@@ -1,7 +1,7 @@
 package org.example.service.exception.extend.phone;
 
 
-import org.example.api.responses.Errors;
+import org.example.data.dto.Errors;
 import org.example.service.exception.BadDataException;
 
 public class PhoneTakenException extends BadDataException {

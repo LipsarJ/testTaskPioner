@@ -1,6 +1,6 @@
 package org.example.service;
 
-import org.example.dao.dto.request.TransferDTO;
+import org.example.data.dto.request.TransferDTO;
 
 public interface AccountService {
     void increaseBalances();
