@@ -1,4 +1,4 @@
-package org.example.controller.response;
+package org.example.data.dto;
 
 
 import java.util.List;

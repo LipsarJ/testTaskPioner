@@ -1,7 +1,7 @@
 package org.example.service.impl;
 
 import lombok.RequiredArgsConstructor;
-import org.example.controller.response.Errors;
+import org.example.data.dto.Errors;
 import org.example.data.dto.request.RequestEmailDataDTO;
 import org.example.data.dto.request.RequestPhoneDataDTO;
 import org.example.data.dto.request.SignUpDTO;

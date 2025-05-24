@@ -1,8 +1,8 @@
 package org.example.controller.advice;
 
-import org.example.controller.response.SimpleResponse;
-import org.example.controller.response.ValidationError;
-import org.example.controller.response.ValidationErrorResponse;
+import org.example.data.dto.SimpleResponse;
+import org.example.data.dto.ValidationError;
+import org.example.data.dto.ValidationErrorResponse;
 import org.example.service.exception.BadDataException;
 import org.example.service.exception.ForbiddenException;
 import org.example.service.exception.NotFoundException;
